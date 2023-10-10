@@ -253,6 +253,8 @@ class Students:
     def __check_sekI_groups(self, grade, groups):
         edited_groups = ""
         for group in groups.split(";"):
+            if(group.startswith("Fuellsel")):
+                continue
             if(group.startswith("Austausch") or (group in NOT_IN_UNTIS_EXCEPTIONS)):
                 # exchange groups and manual exceptions are just added
                 edited_groups += group + ";"
@@ -752,7 +754,7 @@ class Teachers:
             # check whether there is some unknown character left:
             for char in username:
                 if not ((ord(char) >= 65 and ord(char) <= 90) or (ord(char) >= 97 and ord(char) <= 122) or (ord(char) >= 45 and ord(char) <= 46)):
-                    self.errors.add_error("error", username, "wrong character found", "found the character " + char + " in username")
+                    self.errors.add_error("error", username, "wrong character found", "found the character '" + char + "' in username")
 
             # check whether all sekI groups are listed in untis
             groups = self.__check_sekI_groups(self.schild_data["Information"][i], groups)

@@ -1,5 +1,5 @@
 # iserv-import
-Tool to convert SchILD, Untis and GomSTH data to import files for iServ
+Tool to convert SchILD, Untis and GomSTH data to import files for iServ. This script is highly adjusted to the use cases of one school, so it's very likely that it's not directly usable for others. However, feel free to use my (at some points not very elegant :)) code as a basis for your import tool.
 
 # documentation
 
@@ -20,6 +20,9 @@ or
 ```
 python iserv-import.py
 ```
+
+## encoding
+The GOMSTH file and maybe also other files are usually in `Western (Windows 1252)` encoding. The script needs them to be in `utf-8`.
 
 ## required input files
 The following files can be edited at the top of the script
